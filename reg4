@@ -1,0 +1,14 @@
+module reg4(inCard, enable, reset, slow_clock, outCard)
+    input: enable, reset, slow_clock;
+    output: card[3:0];
+    reg outCard;
+    
+    always@(posedge clk) begin
+        if(resetb) begin
+            outCard <= 4'b0000;
+        end else(enable) begin 
+            outCard <= inCard;
+    end
+endmodule
+    
+    
